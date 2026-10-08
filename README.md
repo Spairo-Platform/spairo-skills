@@ -16,7 +16,7 @@ i wykorzystać je do uzupełniania formularzy.
 2. Wybierz **Add → Add marketplace → Add from a repository**.
 3. Wklej `https://github.com/Spairo-Platform/spairo-skills`
    lub `Spairo-Platform/spairo-skills`.
-4. Odszukaj plugin **Spairo Skills** (`spairo-skills`) i kliknij **Add**.
+4. Odszukaj plugin **Spairo Skills** (`spairo`) i kliknij **Add**.
 5. W rozmowie wpisz `/` lub kliknij `+`, aby zobaczyć oba skille.
 
 Dodanie marketplace udostępnia katalog; zainstalowanie pluginu udostępnia
@@ -40,8 +40,8 @@ Następnie wybierz **uzupelnij-formularz** i podaj:
 W Cowork i Claude Code dostępne są także polecenia:
 
 ```text
-/spairo-skills:zbierz-kontekst-firmy [nazwa firmy] z [miejscowość]
-/spairo-skills:uzupelnij-formularz [ścieżka lub opis formularza]
+/spairo:zbierz-kontekst-firmy [nazwa firmy] z [miejscowość]
+/spairo:uzupelnij-formularz [ścieżka lub opis formularza]
 ```
 
 Skill pracuje na kopii wzoru. Ceny, podpisującego, wyborów w oświadczeniach
@@ -52,7 +52,25 @@ oraz krótką notatkę z uzupełnionymi polami i brakami.
 
 ```text
 /plugin marketplace add Spairo-Platform/spairo-skills
-/plugin install spairo-skills@spairo-skills
+/plugin install spairo@spairo-skills
+```
+
+## Przejście z wersji 0.1.0
+
+Od wersji 0.2.0 identyfikator pluginu to `spairo`, a polecenia mają prefiks
+`spairo:`. Nazwa wyświetlana nadal brzmi **Spairo Skills**.
+
+Jeśli masz zainstalowaną wersję 0.1.0, usuń stary plugin `spairo-skills`,
+odśwież marketplace i dodaj plugin `spairo`. Jeśli katalog nadal pokazuje
+stary wpis, usuń marketplace i dodaj go ponownie z tego samego linku.
+Następnie otwórz nową rozmowę.
+
+W Claude Code:
+
+```text
+/plugin uninstall spairo-skills@spairo-skills
+/plugin marketplace update spairo-skills
+/plugin install spairo@spairo-skills
 ```
 
 ## Struktura repozytorium
