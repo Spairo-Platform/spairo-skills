@@ -1,13 +1,13 @@
 {
   "name": "spairo",
   "displayName": "Spairo Skills",
-  "version": "0.2.0",
-  "description": "Skille i narzędzia AI po polsku: zbieranie danych firmy i uzupełnianie formularzy.",
+  "version": "0.3.0",
+  "description": "Skille i narzędzia AI po polsku: dane firmy, formularze i weryfikacja umów budowlanych.",
   "author": {
     "name": "Spairo",
     "url": "https://github.com/Spairo-Platform"
   },
   "homepage": "https://github.com/Spairo-Platform/spairo-skills#readme",
   "repository": "https://github.com/Spairo-Platform/spairo-skills",
-  "keywords": ["polski", "formularze", "dokumenty", "krs"]
+  "keywords": ["polski", "formularze", "dokumenty", "krs", "umowy", "budownictwo"]
 }

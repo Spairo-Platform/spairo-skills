@@ -2,13 +2,14 @@
 
 Skille i narzędzia AI.
 
-Praktyczne umiejętności po polsku. Pierwszy zestaw pomaga zebrać dane firmy
-i wykorzystać je do uzupełniania formularzy.
+Praktyczne umiejętności po polsku: zbieranie danych firmy, uzupełnianie
+formularzy i weryfikacja umów budowlanych z perspektywy Wykonawcy.
 
 | Skill | Do czego służy |
 | --- | --- |
 | [zbierz-kontekst-firmy](plugins/spairo-skills/skills/zbierz-kontekst-firmy/SKILL.md) | Zbiera dane z oficjalnego KRS i strony firmy oraz zapisuje kontekst do kolejnych zadań. |
 | [uzupelnij-formularz](plugins/spairo-skills/skills/uzupelnij-formularz/SKILL.md) | Uzupełnia nową kopię formularza na podstawie kontekstu firmy i wskazuje brakujące dane. |
+| [weryfikacja-umowy-wykonawca](plugins/spairo-skills/skills/weryfikacja-umowy-wykonawca/SKILL.md) | Analizuje umowę budowlaną i załączniki z perspektywy Wykonawcy; podaje kartę umowy, sprawdza spójność i rozwija wybrane punkty raportu. |
 
 ## Instalacja w Claude Desktop
 
@@ -17,7 +18,7 @@ i wykorzystać je do uzupełniania formularzy.
 3. Wklej `https://github.com/Spairo-Platform/spairo-skills`
    lub `Spairo-Platform/spairo-skills`.
 4. Odszukaj plugin **Spairo Skills** (`spairo`) i kliknij **Add**.
-5. W rozmowie wpisz `/` lub kliknij `+`, aby zobaczyć oba skille.
+5. W rozmowie wpisz `/` lub kliknij `+`, aby zobaczyć trzy skille.
 
 Dodanie marketplace udostępnia katalog; zainstalowanie pluginu udostępnia
 jego skille. Pluginy wymagają płatnego planu Claude. W organizacji dostęp
@@ -42,11 +43,22 @@ W Cowork i Claude Code dostępne są także polecenia:
 ```text
 /spairo:zbierz-kontekst-firmy [nazwa firmy] z [miejscowość]
 /spairo:uzupelnij-formularz [ścieżka lub opis formularza]
+/spairo:weryfikacja-umowy-wykonawca [umowa i załączniki]
 ```
 
 Skill pracuje na kopii wzoru. Ceny, podpisującego, wyborów w oświadczeniach
 i innych danych konkretnego zadania nie zgaduje. Przekazuje gotowy plik
 oraz krótką notatkę z uzupełnionymi polami i brakami.
+
+Do weryfikacji umowy dołącz projekt umowy i dostępne załączniki, wybierz
+**weryfikacja-umowy-wykonawca** i napisz:
+
+> Sprawdź tę umowę z perspektywy Wykonawcy.
+
+Pierwsza odpowiedź zawiera kartę umowy, błędy i nieścisłości oraz spis
+punktów raportu. Aby rozwinąć wybrane punkty, wpisz ich numery, np. `3, 5, 9`.
+Warunki korzystania z tego skilla znajdują się w sekcji
+**Informacja o licencji** w jego `SKILL.md`.
 
 ## Instalacja w Claude Code
 
@@ -87,6 +99,8 @@ plugins/
         SKILL.md
         references/format-kontekstu.md
       uzupelnij-formularz/
+        SKILL.md
+      weryfikacja-umowy-wykonawca/
         SKILL.md
 ```
 
