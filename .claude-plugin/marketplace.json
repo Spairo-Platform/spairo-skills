@@ -1,0 +1,16 @@
+{
+  "name": "spairo-skills",
+  "description": "Skille i narzędzia AI",
+  "owner": {
+    "name": "Spairo"
+  },
+  "plugins": [
+    {
+      "name": "spairo-skills",
+      "source": "./plugins/spairo-skills",
+      "description": "Skille i narzędzia AI po polsku: zbieranie danych firmy i uzupełnianie formularzy.",
+      "category": "productivity",
+      "tags": ["polski", "formularze", "dokumenty", "krs"]
+    }
+  ]
+}
